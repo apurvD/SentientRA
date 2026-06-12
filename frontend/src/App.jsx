@@ -53,7 +53,6 @@ function App() {
     }
   };
 
-  // --- NEW: Copy to Clipboard Handler ---
   const handleCopyCode = (code) => {
     navigator.clipboard.writeText(code);
     setIsCopied(true);
@@ -64,7 +63,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen bg-gray-900 text-gray-100 font-sans relative">
       
-      {/* NEW: Invisible SVG Filter for Deuteranomaly (Red-Green Color Blindness) */}
+      {/* Invisible SVG Filter for Deuteranomaly (Red-Green Color Blindness) */}
       <svg className="hidden">
         <filter id="deuteranomaly">
           <feColorMatrix type="matrix" values="0.367  0.861 -0.228  0  0
@@ -74,7 +73,7 @@ function App() {
         </filter>
       </svg>
 
-      {/* HEADER (Unchanged) */}
+      {/* HEADER */}
       <header className="p-4 bg-gray-800 border-b border-gray-700 flex items-center justify-between z-10 relative shadow-md">
         <div className="flex items-center gap-3">
           <Activity className="text-blue-400" size={28} />
@@ -108,7 +107,7 @@ function App() {
       {/* MAIN WORKSPACE */}
       <main className="flex-1 flex overflow-hidden">
         
-        {/* LEFT PANEL (Unchanged) */}
+        {/* LEFT PANEL */}
         <div className="w-1/2 border-r border-gray-700 overflow-y-auto bg-gray-900 p-6 custom-scrollbar">
           <h2 className="text-xl font-semibold mb-4 text-gray-300 flex items-center gap-2">
             <Code size={20} /> Structural Violations
@@ -169,7 +168,7 @@ function App() {
                 </div>
               </div>
 
-              {/* NEW: Enhanced Remediation Code with Copy Button */}
+              {/* Enhanced Remediation Code with Copy Button */}
               <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-xl mb-6 relative group">
                  <div className="flex justify-between items-center mb-3">
                    <h3 className="text-sm text-green-400 uppercase tracking-wider font-bold flex items-center gap-2">
@@ -188,7 +187,7 @@ function App() {
                  </code>
               </div>
 
-              {/* NEW: Enhanced Visual Context with Color Blind Toggle */}
+              {/* Enhanced Visual Context with Color Blind Toggle */}
               {auditResult.screenshot && (
                 <div className="mt-auto bg-gray-800 p-4 rounded-xl border border-gray-700 shadow-xl">
                    <div className="flex justify-between items-center mb-3">
