@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f9f9f9; padding: 2rem; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+        /* VIOLATION 1: Terrible Contrast */
+        .bad-contrast { color: #b3b3b3; font-size: 14px; margin-bottom: 1rem; }
+        
+        .input-group { margin-bottom: 1rem; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        
+        .header-img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem; }
+        
+        .action-bar { display: flex; justify-content: flex-end; margin-top: 1rem; }
+        .icon-btn { background: #2563eb; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center;}
+        .icon-btn svg { stroke: white; width: 20px; height: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- VIOLATION 2: Image missing meaningful alt text -->
+    <img src="https://images.unsplash.com/photo-1780995174272-3515544edd64?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image_9921.jpg" class="header-img">
+
+    <h2>Welcome Back</h2>
+    
+    <!-- The contrast here fails WCAG AA standards completely -->
+    <p class="bad-contrast">Please enter your account details below to access your dashboard.</p>
+
+    <form>
+        <div class="input-group">
+            <!-- VIOLATION 3: Input missing a <label> tag -->
+            <input type="text" placeholder="Email Address">
+        </div>
+        
+        <div class="action-bar">
+            <!-- VIOLATION 4: Button with only an icon and no aria-label -->
+            <button class="icon-btn" onclick="event.preventDefault();">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
